@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>이채윤</title>
+	<meta name="description" content="설명">
+	<meta name="keywords" content="키워드1, 키워드2">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link rel="icon" type="image/png" href="">
+	<meta property="og:image" content="">
+
+</head>
+
+<body>
+
+
+
+
+<div class="r1">
+	<div class="r1-glow"></div>
+
+<img class="kitty" src="kitty.png">
+
+  <div class="mask">
+  	<div class="ticker-window">
+
+    <div class="slide-track">
+
+      <ul class="nail_slide">
+      	 <li class="label">     
+      	 <svg width="1600" height="300">
+         <defs>
+               <path id="wavePath1" d="M 10 220 Q 300 120 600 220 Q 900 320 1200 220 Q 1500 120 1590 220" />
+             </defs>
+          <text font-size="200" fill="black">
+              <textPath href="#wavePath1">새로운 소식입니다람쥐~
+              </textPath>
+         </text>
+         </svg>
+          </li>
+
+        <li><img class="pic" src="hansumin/1.jpg"></li>
+        <li><img class="pic" src="kimhamin/1.jpg"></li>
+        <li><img class="pic" src="hansumin/3.jpg"></li>
+        <li><img class="pic" src="kimsunah/1.jpg"></li>
+      </ul>
+
+      <!-- 복제 -->
+      <ul class="nail_slide">
+      	<li class="label">     
+      	 <svg width="1600" height="300">
+         <defs>
+               <path id="wavePath2" d="M 10 220 Q 300 120 600 220 Q 900 320 1200 220 Q 1500 120 1590 220" />
+             </defs>
+          <text font-size="200" fill="black">
+              <textPath href="#wavePath2">새로운 소식입니다람쥐~
+              </textPath>
+         </text>
+         </svg>
+          </li>
+
+        <li><img class="pic" src="hansumin/1.jpg"></li>
+        <li><img class="pic" src="kimhamin/1.jpg"></li>
+        <li><img class="pic" src="hansumin/3.jpg"></li>
+        <li><img class="pic" src="kimsunah/1.jpg"></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="r2">
+<div class="r2-glow"></div>
+
+<img class="r2-heart" src="heart.png">
+
+<div class="photo-box">
+
+  <div class="slide active">
+    <img src="imsaeyeon/14.jpg">
+    <div class="caption1">"임세연 오마카세 네이루 ~ "</div>
+    <div class="caption2">visit 10 like 9</div>
+  </div>
+
+  <div class="slide">
+    <img src="kimsunah/4.jpg">
+    <div class="caption1">"퀴니에게 눈알 치크 네일을 해주다!"</div>
+    <div class="caption2">visit 18 like 11</div>
+  </div>
+
+  <div class="slide">
+    <img src="lihanhee/2.jpg">
+    <div class="caption1">"별이랑 카키랑 블랙이랑..."</div>
+    <div class="caption2">visit 20 like 18</div>
+  </div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 3000); // 3초마다 변경
+</script>
+</div>
+
+</div>
+
+
+
+<div class="r3">
+  <div class="r3-glow"></div>
+
+  <div class="info1">
+    <img src="insta.png" alt="instagram">
+  </div>
+
+  <div class="info2">@chae.rry_nail</div>
+
+  <div class="info3">chae.rry_nail@gmail.com</div>
+</div>
+
+<script>
+const infoDiv = document.querySelector(".info2");
+
+infoDiv.addEventListener("click", () => {
+  window.open("https://www.instagram.com/chae.rry_nail?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", "_blank");
+});
+</script>
+
+
+
+
+
+<div class="r4">
+	<div class="r4-glow"></div>
+
+	<div class="gallery">
+  <!-- 1번째 줄 -->
+  <img src="kimsunah/sun.png" data-id="sun" class="modal-open">
+  <img src="lihanhee/hee.png" data-id="hee"class="modal-open">
+  <img src="yangsuah/yang.png" data-id="yang"class="modal-open">
+
+  <!-- 2번째 줄 (2개만 가운데 줄) -->
+  <img src="leechaeyun/me.png" data-id="me" class="modal-open">
+  <img src="hansumin/han.png" data-id="han"class="modal-open">
+
+  <!-- 3번째 줄 -->
+  <img src="kimhamin/ha.png" data-id="ha"class="modal-open">
+  <img src="imsaeyeon/im.png" data-id="im" class="modal-open">
+  <img src="parkjaehee/jae.png" data-id="jae" class="modal-open">
+</div>
+</div>
+
+<!-- 블로그 모달 -->
+<div class="modal" id="blogModal">
+  <div class="modal-paper">
+    <button class="close">✕</button>
+    <div class="modal-inner">
+      <!-- 왼쪽 -->
+      <div class="left">
+        <img id="modalMainImg">
+        <p id="profileName"></p>
+        <ul id="postToc"></ul>
+      </div>
+      <!-- 오른쪽 블로그 -->
+      <div class="right">
+        <div class="title-row">
+          <h2 id="blogTitle"></h2>
+          <div class="stats">
+            <span id="visitCount">👁 0</span>
+            <button id="likeBtn">❤️ <span id="likeCount">0</span></button>
+          </div>
+        </div>
+        <div id="blogPosts"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 이미지 확대 모달 -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img id="modalImg" src="">
+  <!--<img class="modal-content" id="modalImg">-->
+</div>
+
+<script>
+const modal = document.getElementById("blogModal");
+const modalImg = document.getElementById("modalMainImg");
+const blogTitle = document.getElementById("blogTitle");
+const blogPosts = document.getElementById("blogPosts");
+const visitCount = document.getElementById("visitCount");
+const likeCount = document.getElementById("likeCount");
+const likeBtn = document.getElementById("likeBtn");
+const closeBtn = modal.querySelector(".close");
+const postToc = document.getElementById("postToc");
+
+const imgModal = document.getElementById("imageModal");
+const modalImgContent = document.getElementById("modalImg");
+const imgCloseBtn = imgModal.querySelector(".close");
+
+let currentId = null;
+
+/* 🔥 데이터 */
+const blogData = {
+  sun: {
+    img: "kimsunah/sun.png",
+    title: "고양이 발바닥 네일..★",
+    nickname: "《Queenny》",
+    visit: 35,
+    like: 23,
+    posts: [
+      {
+        date: "25.09.22",
+        text: "엄지 손톱 너무 귀엽고...",
+        images: ["kimsunah/1.jpg","kimsunah/2.jpg","kimsunah/3.jpg","kimsunah/4.jpg"]
+      }
+    ]
+  },
+   hee: {
+    img: "lihanhee/hee.png",
+    title: "이한희 네일 입문 시키기",
+    nickname: "《Hanhee✋》",
+    visit: 35,
+    like: 23,
+    posts: [
+      {
+        date: "25.07.16",
+        text: "완짱이 카메라로 찍어줬다. 덕분에 고퀄 사진이.... ",
+        images: ["lihanhee/1.jpg","lihanhee/5.jpg","lihanhee/7.jpg","lihanhee/9.jpg","lihanhee/12.jpg","lihanhee/13.jpg","lihanhee/19.jpg","lihanhee/25.jpg"]
+      }
+    ]
+  },
+  yang: {
+    img: "yangsuah/yang.png",
+    title: "점점 버르장머리 나아지는중",
+    nickname: "《악마👹》",
+    visit: 35,
+    like: 23,
+    posts: [
+      {
+        date: "25.10.08",
+        text: "진짜 까다롭다운 손님이다. 하지만 피자 사줘서 합격. ",
+        images: ["yangsuah/7.jpg","yangsuah/8.jpg"]
+      },
+      {
+        date: "25.09.05",
+        text: "또 시작이다. 악덕 손님",
+        images: ["yangsuah/5.jpg","yangsuah/6.jpg"]
+      },
+       {
+        date: "25.09.05",
+        text: "양수아는 진짜 버르장머리 고쳐라",
+        text: "양수아 첫 네일 해주기! 모든 악의 근원이다. 진짜 해주면 안됐는데... 어휴",
+        images:  ["yangsuah/1.jpg","yangsuah/2.jpg","yangsuah/3.jpg","yangsuah/4.jpg"]
+      }
+    ]
+  },
+  me: {
+    img: "leechaeyun/me.png",
+    title: "셀프 네일 기록",
+    nickname: "《운영자》",
+    visit: 35,
+    like: 23,
+    posts: [
+      {
+        date: "25.10.08",
+        text: "고전 키티 네일",
+        images: ["leechaeyun/1.jpg","leechaeyun/2.jpg","leechaeyun/3.jpg","leechaeyun/4.jpg","leechaeyun/5.jpg","leechaeyun/6.jpg","leechaeyun/7.jpg","leechaeyun/8.jpg"]
+      },
+      {
+        date: "25.09.05",
+        text: "컬러 조합이 진짜 좋았다 ★",
+        images: ["kimsunah/4.jpg"]
+      }
+    ]
+  },
+  han: {
+    img: "hansumin/han.png",
+    title: "체리네일 최고 vip 손님",
+    nickname: "《한숨》",
+    visit: 0,
+    like: 0,
+    posts: [
+      {
+        date: "25.07.14",
+        text: "일본 여행 전 우당탕탕 네일 하기",
+        images: ["hansumin/12.jpg","hansumin/13.jpg"]
+      },
+      {
+        date: "25.05.21",
+        text: "한수민으로 네일 실험 하기★",
+        images: ["hansumin/2.jpg","hansumin/5.jpg","hansumin/7.jpg","hansumin/8.jpg","hansumin/9.jpg","hansumin/10.jpg"]
+      }
+    ]
+  },
+   ha: {
+    img: "kimhamin/ha.png",
+    title: "내가 지옥 끝까지 따라갈 하민이에게 네일을 해주다. 하민아 나는 너가 행복해 하는 모습만 봐도 배가 불러",
+    nickname: "《haha》",
+    visit: 0,
+    like: 0,
+    posts: [
+      {
+        date: "25.10.08",
+        text: "무화과 ネイル",
+        images: ["kimhamin/42.jpg","kimhamin/40.jpg","kimhamin/38.jpg","kimhamin/35.jpg","kimhamin/33.jpg","kimhamin/32.jpg","kimhamin/36.jpg"]
+      },
+      {
+        date: "25.09.29",
+        text: "하민이 인생 첫 네일 - 자석네일",
+        images: ["kimhamin/30.jpg","kimhamin/27.jpg","kimhamin/25.jpg","kimhamin/18.jpg","kimhamin/17.jpg","kimhamin/10.jpg","kimhamin/4.jpg"],
+         videos: ["kimhamin/31.mp4"]
+      }
+    ]
+  },
+   im: {
+    img: "imsaeyeon/im.png",
+    title: "오마카세 네일",
+    nickname: "《임세》",
+    visit: 0,
+    like: 0,
+    posts: [
+      {
+        date: "25.09.28",
+        text: "욕망 가득 네일 하기2",
+        images: ["imsaeyeon/13.jpg","imsaeyeon/14.jpg","imsaeyeon/15.jpg","imsaeyeon/9.jpg","imsaeyeon/7.jpg","imsaeyeon/2.jpg"]
+      },
+      {
+        date: "25.08.28",
+        text: "욕망가득 네일1",
+        images: ["imsaeyeon/21.jpg","imsaeyeon/18.jpg","imsaeyeon/20.jpg","imsaeyeon/17.jpg","imsaeyeon/16.jpg"]
+      }
+    ]
+  },
+  jae: {
+    img: "parkjaehee/jae.png",
+    title: "불청객 네일 해주기",
+    nickname: "《쩨리》",
+    visit: 0,
+    like: 0,
+    posts: [
+      {
+        date: "25.09.28",
+        text: "갑자기 네일 보수해주기^^",
+        images: ["parkjaehee/2.jpg","parkjaehee/6.jpg","parkjaehee/10.jpg","parkjaehee/13.jpg","parkjaehee/15.jpg","parkjaehee/16.jpg","parkjaehee/25.jpg","parkjaehee/32.jpg","parkjaehee/37.jpg"]
+      },
+      {
+        date: "25.08.26",
+        text: "체리네일 첫 손님!!",
+        images: ["parkjaehee/40.jpg","parkjaehee/41.jpg","parkjaehee/42.jpg","parkjaehee/43.jpg","parkjaehee/44.jpg"]
+      }
+    ]
+  }
+};
+
+
+   // 🔒 좋아요 기록
+let likedOnce = JSON.parse(localStorage.getItem("likedOnce")) || {};
+
+// localStorage 불러오기
+const saved = localStorage.getItem("blogStats");
+if (saved) {
+  const stats = JSON.parse(saved);
+  Object.keys(stats).forEach(id => {
+    if (blogData[id]) {
+      blogData[id].visit = stats[id].visit;
+      blogData[id].like = stats[id].like;
+    }
+  });
+}
+
+// 저장
+function saveStats() {
+  localStorage.setItem("blogStats", JSON.stringify(blogData));
+  localStorage.setItem("likedOnce", JSON.stringify(likedOnce));
+}
+
+// 🔥 블로그 모달 열기
+document.querySelectorAll(".modal-open").forEach(img => {
+  img.addEventListener("click", () => {
+    currentId = img.dataset.id;
+    const data = blogData[currentId];
+
+    data.visit++;
+    visitCount.textContent = `👁 ${data.visit}`;
+    likeCount.textContent = data.like;
+
+    modalImg.src = data.img;
+    profileName.textContent = data.nickname;
+    blogTitle.textContent = data.title;
+    blogPosts.innerHTML = "";
+
+    // 포스트 렌더링
+    data.posts.forEach((p, index) => {
+      let imgs = "";
+      p.images.forEach(src => {
+        imgs += `<img src="${src}" class="post-img">`;
+      });
+        let vids = "";
+  p.videos?.forEach(src => {
+    vids += `
+      <video controls class="post-video">
+        <source src="${src}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    `;
+  });
+
+      blogPosts.innerHTML += `
+        <div class="post" id="post-${index}">
+          <div class="date">${p.date}</div>
+          <p>${p.text}</p>
+          <div class="post-images">${imgs}</div>
+         <div class="post-videos">${vids}</div>
+        </div>
+      `;
+    });
+
+    // 목차 생성
+    postToc.innerHTML = "";
+    data.posts.forEach((p, index) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<div class="toc-button" data-index="${index}"><span class="toc-text">${p.date}</span></div>`;
+      li.addEventListener("click", () => {
+        const postEl = document.getElementById(`post-${index}`);
+        const rightContainer = document.querySelector(".right");
+        const topPos = postEl.offsetTop - rightContainer.offsetTop;
+        rightContainer.scrollTo({ top: topPos, behavior: "smooth" });
+      });
+      postToc.appendChild(li);
+    });
+
+    // 좋아요 활성화
+    likeBtn.classList.toggle("active", likedOnce[currentId]);
+
+    modal.style.display = "flex";
+    saveStats();
+  });
+});
+
+// 🔥 블로그 모달 닫기
+closeBtn.onclick = () => modal.style.display = "none";
+modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+// 🔥 포스트 이미지 클릭 → 확대
+document.addEventListener("click", e => {
+  if(e.target.classList.contains("post-img")) {
+    modalImgContent.src = e.target.src;
+    imgModal.style.display = "flex";
+  }
+});
+
+// 🔥 이미지 모달 닫기
+imgCloseBtn.onclick = () => imgModal.style.display = "none";
+imgModal.onclick = e => { if(e.target === imgModal) imgModal.style.display = "none"; };
+
+// 🔥 좋아요 기능
+likeBtn.addEventListener("click", () => {
+  if (!currentId) return;
+
+  const liked = likedOnce[currentId];
+  if (liked) {
+    likedOnce[currentId] = false;
+    blogData[currentId].like--;
+    likeCount.textContent = blogData[currentId].like;
+    likeBtn.classList.remove("active");
+  } else {
+    likedOnce[currentId] = true;
+    blogData[currentId].like++;
+    likeCount.textContent = blogData[currentId].like;
+
+    likeBtn.classList.add("active");
+    likeBtn.style.animation = "pop 0.3s ease";
+
+    const heart = document.createElement("span");
+    heart.className = "like-heart";
+    heart.textContent = "❤️";
+    likeBtn.appendChild(heart);
+    setTimeout(() => heart.remove(), 800);
+  }
+
+  saveStats();
+});
+</script>
+
+
+
+
+
+
+
+
+<div class="r5">
+  <div class="r5-glow"></div>
+
+  <div class="calendar">
+    <div class="month">
+      <button class="prev">&#10094;</button>
+      <h2 id="month-year"></h2>
+      <button class="next">&#10095;</button>
+    </div>
+
+    <div class="weekdays">
+      <div>日</div><div>月</div><div>火</div>
+      <div>水</div><div>木</div><div>金</div><div>土</div>
+    </div>
+
+
+    <div class="days" id="days"></div>
+
+    <div id="time-area">
+      <h3 id="selected-date">날짜를 선택하세요</h3>
+      <div id="time-list"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const monthYear = document.getElementById('month-year');
+const daysContainer = document.getElementById('days');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+const timeSlots = ['10:00', '11:00', '13:00', '15:00', '17:00'];
+
+const reservations = {
+  '2025-12-10': ['10:00', '13:00'],
+  '2025-12-15': ['11:00'],
+  '2025-12-25': ['10:00', '11:00', '13:00']
+};
+
+const today = new Date();
+today.setHours(0,0,0,0);
+
+let currentMonth = today.getMonth();
+let currentYear = today.getFullYear();
+let selectedDateDiv = null;
+
+function renderCalendar(month, year) {
+  daysContainer.innerHTML = '';
+  selectedDateDiv = null;
+  document.getElementById('time-list').innerHTML = '';
+  document.getElementById('selected-date').textContent = '날짜를 선택하세요';
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const lastDate = new Date(year, month + 1, 0).getDate();
+
+  monthYear.textContent = `${year}年 ${month + 1}月`;
+
+  for (let i = 0; i < firstDay; i++) {
+    daysContainer.appendChild(document.createElement('div'));
+  }
+
+  for (let d = 1; d <= lastDate; d++) {
+    const dateDiv = document.createElement('div');
+     dateDiv.classList.add('day'); 
+
+    const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+
+    dateDiv.innerHTML = `
+      <div class="blur-box"></div>
+      <span class="date-text">${d}</span>
+    `;
+
+    const dateObj = new Date(year, month, d);
+
+    if (dateObj.getTime() === today.getTime()) {
+      dateDiv.classList.add('today');
+    }
+
+    dateDiv.addEventListener('click', () => {
+      if (selectedDateDiv) {
+        selectedDateDiv.classList.remove('selected');
+      }
+      selectedDateDiv = dateDiv;
+      dateDiv.classList.add('selected');
+      showTimes(dateStr);
+        document.getElementById('reserve-date').value = dateStr;
+         document.getElementById('reserve-date').value =
+    `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+
+
+  showTimes(dateStr);
+    });
+
+    daysContainer.appendChild(dateDiv);
+  }
+}
+
+function showTimes(dateStr) {
+  const booked = reservations[dateStr] || [];
+  document.getElementById('selected-date').textContent =
+    `선택한 날짜 : ${dateStr}`;
+
+  const timeList = document.getElementById('time-list');
+  timeList.innerHTML = '';
+
+  timeSlots.forEach(time => {
+    const btn = document.createElement('button');
+
+    if (booked.includes(time)) {
+      btn.textContent = `${time}`;
+      btn.className = 'reserved-time';
+      btn.disabled = true;
+    } else {
+      btn.textContent = `${time}`;
+      btn.className = 'available-time';
+      btn.addEventListener('click', () => {
+        selectedTimeStr = time;
+
+        document.getElementById('reserve-time').value = time;
+
+        // (선택) 예약창으로 자동 이동
+        document.querySelector('.r6')
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    timeList.appendChild(btn);
+  });
+}
+
+prevBtn.onclick = () => {
+  currentMonth--;
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  }
+  renderCalendar(currentMonth, currentYear);
+};
+
+nextBtn.onclick = () => {
+  currentMonth++;
+  if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+  renderCalendar(currentMonth, currentYear);
+};
+
+renderCalendar(currentMonth, currentYear);
+</script>
+
+
+
+
+
+
+<div class="r6">
+  <div class="r6-glow"></div>
+
+  <div class="r6-content">
+    <h2 class="r6-title">예약 신청</h2>
+
+    <form id="reserve-form">
+      <input type="text" name="name" placeholder="이름" required>
+      <input type="tel" name="phone" placeholder="전화번호" required>
+
+      <!-- 달력 / 시간 자동 연결 -->
+      <input
+  type="text"
+  name="date"
+  id="reserve-date"
+  placeholder="달력에서 날짜를 선택하세요"
+  readonly
+  required
+>
+      <input
+  type="text"
+  name="time"
+  id="reserve-time"
+  placeholder="달력에서 시간을 선택하세요"
+  readonly
+  required
+>
+
+      <label class="file-label">
+        네일 디자인 사진 첨부
+        <input type="file" name="design" accept="image/*" required>
+      </label>
+
+      <button type="submit">예약 신청 보내기</button>
+    </form>
+  </div>
+</div>
+
+<script>
+/* 예약 폼 전송 후 초기화 */
+document.getElementById('reserve-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // 👉 여기서 EmailJS sendForm 들어가면 됨
+  // emailjs.sendForm(...)
+
+  alert('예약 신청이 완료되었습니다 💅');
+
+  // ⭐️ 입력값 초기화
+  this.reset();
+
+  // ⭐️ 선택 상태 초기화
+  selectedDateStr = null;
+  selectedTimeStr = null;
+
+  if (selectedDateDiv) {
+    selectedDateDiv.classList.remove('selected');
+    selectedDateDiv = null;
+  }
+
+  document.getElementById('time-list').innerHTML = '';
+  document.getElementById('selected-date').textContent = '날짜를 선택하세요';
+});
+</script>
+
+
+</body>
+
+	
+
+</body>
+</html>
